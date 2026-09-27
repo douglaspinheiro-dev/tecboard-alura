@@ -1,0 +1,10 @@
+nomenclaturas mais usadas para branchs
+
+modificacoes e novas funcionalidades
+    feat ou feature/descricao-da-modificacao
+
+correção de problema
+    fix ou bugfix/descricao-do-problema
+
+modificacao urgente na main 
+    hotfix/descricao-do-problema
