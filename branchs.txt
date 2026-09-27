@@ -17,3 +17,131 @@ git branch -m nomeDaBranch
 
 git branch checkout nomeDaBranch
     entra na branch
+
+
+No uso profissional do GitHub, é comum adotar um fluxo de trabalho que protege a integridade do código da main. Para isso, utilizamos branches para implementar modificações, e pull requests para revisar e inserir essas mudanças de forma controlada.
+
+O processo geral segue os seguintes passos:
+
+Criar uma nova branch a partir da main.
+Implementar a modificação localmente.
+Adicionar e versionar os arquivos (git add e git commit).
+Enviar a branch para o repositório remoto (git push).
+Abrir um pull request no GitHub.
+Após a aprovação do time, a branch é mesclada na main.
+Voltar para a main e atualizar seu repositório local (git pull).
+
+
+Principais comandos do fluxo Git/GitHub
+Comando	Descrição
+git checkout -b nome-da-branch
+	Cria e muda para uma nova branch a partir da atual.
+git branch
+	Lista todas as branches existentes no repositório local.
+git status
+	Mostra os arquivos modificados e o estado da branch atual.
+git add .
+	Adiciona todas as modificações para serem incluídas no próximo commit.
+git add nome-do-arquivo
+	Adiciona apenas um arquivo específico.
+git commit -m "mensagem"
+	Cria um commit com as mudanças adicionadas.
+git log --oneline
+	Exibe o histórico de commits de forma resumida.
+git push origin nome-da-branch
+	Envia a branch e seus commits para o repositório remoto (GitHub).
+git checkout main
+	Volta para a branch main.
+git pull origin main
+	Atualiza a main local com as últimas alterações do repositório remoto.
+
+Links de apoio
+Documentação oficial do Git
+    https://git-scm.com/docs
+Documentação oficial do GitHub
+    https://docs.github.com/pt
+Git Branching e Pull Requests - GitHub Docs
+    https://docs.github.com/pt/pull-requests/how-tos/create-pull-requests
+
+
+
+
+Conceito de DNS
+O DNS (Domain Name System) é um sistema de nomes que traduz nomes de domínios legíveis, como exemplo.com, para endereços IP numéricos que os computadores utilizam para se comunicar. Esse mecanismo permite que, ao digitar um endereço no navegador, a resolução da URL para o endereço do servidor seja realizada de forma rápida e automática.
+
+Processo de Resolução
+Quando uma requisição é feita, o processo de resolução do DNS passa por diversas etapas:
+
+Consulta Recursiva: O computador solicita a resolução do domínio a um resolvedor, o qual investiga ou encaminha a consulta para outros servidores.
+Servidores Raiz: Se o resolvedor não tiver a resposta em cache, a consulta é enviada para os servidores raiz, que conhecem a localização dos servidores de TLD (domínio de primeiro nível).
+Servidores de TLD: Esses servidores indicam qual é o servidor autoritativo responsável pelo domínio solicitado.
+Servidor Autoritativo: Por fim, o servidor autoritativo retorna o endereço IP correspondente ao nome requisitado.
+Esse encadeamento garante que a conversão do nome para o IP ocorra de forma precisa, facilitando o acesso aos recursos da web.
+
+Aspectos Técnicos e Eficiência
+Diversos mecanismos de caching estão implementados para otimizar a performance deste sistema, reduzindo a latência da resolução e a carga sobre os servidores. Por outro lado, a dependência de instâncias centralizadas, como os servidores raiz, demanda atenção em termos de segurança e disponibilidade. Estratégias de redundância e balanceamento de carga são empregadas para mitigar riscos e garantir que mesmo em caso de falhas, o acesso aos serviços permaneça ininterrupto.
+
+Essa arquitetura distribuída e escalável torna o DNS essencial para a comunicação na internet, sendo um dos pilares que viabilizam o funcionamento de sites e aplicações de forma confiável e eficiente.
+
+
+
+modelo para pull request
+## O que foi alterado?
+
+[Descreva a alteração feita no projeto.]
+
+## Por que essa alteração foi feita?
+
+[Explique o problema ou a melhoria.]
+
+## Como testar?
+
+[Descreva como abrir o projeto e o que observar no navegador.]
+
+## Pontos de atenção
+
+[Liste dúvidas, riscos ou partes que merecem revisão.]
+
+
+
+
+prompt para chatgpt revisar o codigo
+
+Estou praticando um fluxo profissional com Git, GitHub, branches e Pull Requests.
+
+Quero que você revise meu Pull Request como se fosse uma pessoa desenvolvedora revisora. Não quero que você reescreva tudo automaticamente. Quero que aponte problemas, riscos e melhorias possíveis.
+
+Contexto:
+- O projeto é uma página web feita com HTML e CSS.
+- A branch principal é main.
+- A alteração foi feita em uma branch separada.
+- O objetivo é proteger a main e revisar a mudança antes do merge.
+
+Nome da branch:
+[cole o nome da branch]
+
+Mensagem ou mensagens de commit:
+[cole as mensagens de commit]
+
+Descrição atual do Pull Request:
+[cole a descrição do PR]
+
+Trechos alterados:
+[cole apenas os trechos relevantes de HTML e/ou CSS]
+
+Critérios de revisão:
+- verifique se o nome da branch comunica bem a alteração;
+- avalie se as mensagens de commit são claras;
+- confira se a descrição do PR explica o que mudou, por que mudou e como testar;
+- aponte se há alguma alteração que parece fora do escopo;
+- identifique riscos de quebrar o layout existente;
+- verifique se há seletores, arquivos ou comportamentos mencionados que não aparecem no código enviado;
+- sugira melhorias, mas explique o motivo de cada uma;
+- não invente arquivos, bibliotecas ou ferramentas que não foram citados.
+
+Saída esperada:
+1. Pontos positivos do PR.
+2. Pontos que precisam de ajuste.
+3. Sugestão de descrição revisada do PR.
+4. Perguntas que uma pessoa revisora poderia fazer.
+5. Checklist de testes antes do merge.
