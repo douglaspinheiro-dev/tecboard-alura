@@ -1,0 +1,238 @@
+/* falar da padding, border e margin, resetar o css
+    cada navegador aplica um estilo padrão, então é importante resetar o css para que todos os navegadores tenham o mesmo estilo
+
+    falar da hierarquia de seletores css
+    diferenca de id e class, id é unico, class pode ser usado em varios elementos
+    falar da herança de estilos, se um elemento pai tem um estilo, os elementos filhos herdam esse estilo, mas podem sobrescrever esse estilo com um estilo mais especifico
+
+
+
+
+    Para saber mais: Reset CSS
+    Quando escrevemos uma página HTML, cada navegador (Chrome, Firefox, Safari, Edge, etc.) já aplica um conjunto próprio de estilos padrão aos elementos. Isso significa que, antes mesmo de você definir qualquer regra no seu CSS, o navegador já está influenciando margens, espaçamentos, tamanhos de fonte e outros detalhes visuais.
+
+    Esses estilos automáticos podem gerar diferenças entre navegadores e dificultar a construção de uma base consistente para o seu layout. Para evitar surpresas, desenvolvedores costumam "resetar" esses estilos, ou seja, informar ao navegador que não queremos que esses padrões sejam aplicados, e assim começamos a estilizar a página de uma base limpa.
+
+    Esse processo é chamado de Reset CSS. Existem diferentes abordagens para fazer isso:
+
+    Reset tradicional: zera praticamente todos os estilos (como margens, paddings e fontes), deixando tudo uniforme.
+    Normalize.css: em vez de remover totalmente os estilos, harmoniza as diferenças entre navegadores, mantendo padrões úteis.
+    CSS moderno: algumas pessoas preferem criar seus próprios resets minimalistas, ajustando apenas o que realmente impacta o projeto.
+
+    Também existem resets mais extensos, que padronizam muito mais propriedades. Um exemplo clássico é o de Eric Meyer:
+    Reset CSS de Eric Meyer - versão reduzida --
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    }
+
+    links de apoio:
+    https://github.com/necolas/normalize.css/
+    https://meyerweb.com/eric/tools/css/reset/
+
+    O importante é entender que o Reset CSS garante consistência visual e previsibilidade, facilitando a vida na hora de construir interfaces responsivas e compatíveis em diferentes navegadores.
+*/
+
+
+/* falar sobre o format da fonte, que pode ser ttf, otf, woff, woff2, eot, svg. o formato da fonte influencia na compatibilidade com os navegadores. por exemplo, ttf é compatível com todos os navegadores, otf é compatível com todos os navegadores, woff é compatível com todos os navegadores modernos, woff2 é compatível com todos os navegadores modernos, eot é compatível com o Internet Explorer, svg é compatível com o Safari e o iOS.
+
+ver no site da fonte o peso da fonte ( bold = 700 )
+ */
+
+/* definicao de fontes */
+@font-face {
+    font-family: "Unbounded";
+    src: url("../fonts/Unbounded-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    
+}
+
+/* remover estilos padrões do navegador, para que todos os navegadores tenham o mesmo estilo
+    reset css
+*/
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* estilo Desktop */
+body {
+    /* fundo escuro, para que o site seja mais agradável aos olhos, e para que o texto branco se destaque mais */
+    
+    background-color: #0E1014;
+    color: #FFFFFF;
+}
+
+h1 {
+    /* falar sobre o tamanho da fonte, que pode ser em px, em, rem, %, vw, vh, vmin, vmax, e auto. o tamanho da fonte influencia na legibilidade do texto. por exemplo, font-size: 16px; é o tamanho padrão da fonte, font-size: 1em; é o tamanho da fonte em relação ao tamanho da fonte do elemento pai, font-size: 1rem; é o tamanho da fonte em relação ao tamanho da fonte do elemento raiz (html), font-size: 100%; é o tamanho da fonte em relação ao tamanho da fonte do elemento pai, font-size: 1vw; é o tamanho da fonte em relação à largura da viewport, font-size: 1vh; é o tamanho da fonte em relação à altura da viewport, font-size: 1vmin; é o tamanho da fonte em relação à menor dimensão da viewport, font-size: 1vmax; é o tamanho da fonte em relação à maior dimensão da viewport, e font-size: auto; é o tamanho da fonte automático.
+     */
+    font-size: 64px;
+    /* falar sobre instalacao e fontes de sistema */
+    /* 
+    a fonte sans-serfif é uma fonte sem serifa, que é mais moderna e limpa, e a fonte monospace é uma fonte com espaçamento fixo, que é usada em códigos e programação, e a fonte cursive é uma fonte com estilo de escrita manual, e a fonte fantasy é uma fonte com estilo decorativo e fantasioso.
+    */
+    /* font-family: serif; */
+    /* font-family: sans-serif; */
+    /* font-family: monospace; */
+    /* font-family: cursive; */
+    /* font-family: fantasy; */
+
+    /* baixar font unbounded, em caso de não estar disponível faz o fallback para sans-serif, que é uma fonte sem serifa, que é mais moderna e limpa
+    */
+    font-family: 'Unbounded', sans-serif;
+
+
+    /* 
+        falar sobre o font-weight, que é a espessura da fonte, e o font-style, que é o estilo da fonte, e o font-display, que é como a fonte é exibida na tela
+        falar sobre cores, que podem ser em hexadecimal, rgb, rgba, hsl, hsla, e nomes de cores. por exemplo, #FFFFFF é branco, rgb(255, 255, 255) é branco, rgba(255, 255, 255, 1) é branco com opacidade 1, hsl(0, 0%, 100%) é branco, hsla(0, 0%, 100%, 1) é branco com opacidade 1, e white é branco.
+        hexadecimal: #ff0000, rgb: rgb(255, 0, 0), rgba: rgba(255, 0, 0, 1), hsl: hsl(0, 100%, 50%), hsla: hsla(0, 100%, 50%, 1), nome da cor: red
+
+        color: red;
+    */
+
+    /* falar sobre o peso da fonte, que pode ser normal, bold, bolder, lighter, 100, 200, 300, 400, 500, 600, 700, 800, 900. o peso da fonte influencia na espessura da fonte. por exemplo, font-weight: normal; é o peso normal da fonte, font-weight: bold; é o peso mais pesado da fonte, font-weight: bolder; é o peso mais pesado da fonte que o normal, font-weight: lighter; é o peso mais leve da fonte que o normal. e os valores numericos representam a espessura da fonte, sendo que 100 é a mais fina e 900 é a mais grossa.
+    
+    */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 60px;
+}
+h1 span {
+    color: #9747FF;
+}
+a {
+    color: #FFFFFF;
+    font-size: 24px;
+    text-decoration: none;
+    background-color: #9747FF;
+    width: 340px;
+    height: 66px;
+
+    /* falar sobre display, que pode ser block, inline, inline-block, flex, grid, none. o display influencia na forma como o elemento é exibido na tela. por exemplo, display: block; é exibido como um bloco, display: inline; é exibido como um elemento inline, display: inline-block; é exibido como um elemento inline com largura e altura definidas, display: flex; é exibido como um container flexível, display: grid; é exibido como um container de grid, e display: none; é ocultado da tela.
+     */
+    display: block;
+    text-align: center;
+    line-height: 66px;
+    border-radius: 36px;
+
+    /* 
+    falar sobre padding, que é o espaçamento interno do elemento, e margin, que é o espaçamento externo do elemento, e border, que é a borda do elemento. o padding influencia no tamanho do elemento, o margin influencia na posição do elemento, e o border influencia na aparência do elemento. por exemplo, padding: 10px; é um espaçamento interno de 10px, margin: 10px; é um espaçamento externo de 10px, e border: 1px solid #000000; é uma borda de 1px sólida preta.
+    */
+
+    /* margin-right: 790px;
+    margin-left: 790px;
+    nao é eficiente pois é uma medida fixa, e não responsiva, então é melhor usar margin: 0 auto; que centraliza o elemento horizontalmente, independente do tamanho da tela
+    */
+
+    margin: 40px auto;
+
+
+}
+
+a:hover {
+    background-color: #8233E8;
+    transition: 0.3s;
+}
+
+/* desafiar os alunos a instalar a fonte Poppins, e caso não esteja disponível fazer o fallback para sans-serif, que é uma fonte sem serifa, que é mais moderna e limpa
+ */
+p { 
+    font-size:24px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 24px auto 0;
+    width: 792px;
+}
+
+section img {
+    display: block;
+    width: 792px;
+    height: 446px;
+    margin: 0 auto;
+}
+
+header img{
+    
+    display: block;
+    margin: 75px 0 0 360px
+}
+
+/* Layout tablet */
+@media(max-width: 768px){
+
+
+    header img{
+    
+        display: block;
+        margin: 65px 0 0 60px
+    }
+
+    p{
+        width: 698px;
+
+    }
+
+    section img {
+        width: 659px;
+        height: 446px;
+    }
+}
+
+/* layout mobile */
+@media(max-width: 375px){
+
+    header img{
+    
+        margin: 32px 0 0 16px;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+
+    p{
+        font-size: 20px;
+        width: 340px;
+
+    }
+
+    a{
+        font-size: 20px;
+        width: 340px;
+    }
+
+    section img {
+        width: 340px;
+        height: 230px;
+    }
+
+}
