@@ -8,3 +8,12 @@ correção de problema
 
 modificacao urgente na main 
     hotfix/descricao-do-problema
+
+git branch
+    mostra branchs criadas 
+
+git branch -m nomeDaBranch 
+    altera nome da branch 
+
+git branch checkout nomeDaBranch
+    entra na branch
